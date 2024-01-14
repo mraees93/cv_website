@@ -1,3 +1,9 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
   background-color: #333;
@@ -45,6 +51,15 @@ h1 {
 
 li {
   list-style: none;
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+  height: 3rem;
+  margin-top: auto;
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
