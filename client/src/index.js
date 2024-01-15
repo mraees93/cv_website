@@ -11,8 +11,7 @@ function myFunction() {
   }
 }
 
-const footerHtml =
-  '<ul>\
+const footerHtml = `<ul>\
               <li>\
                 <a href="#">link</a>\
               </li>\
@@ -22,8 +21,8 @@ const footerHtml =
               <li>\
                 <a href="#">link</a>\
               </li>\
-            </ul>';
+            </ul>`;
 
-document.getElementsByTagName("footer").innerHTML = footerHtml;
+document.getElementsByTagName("footer").innerHTML += footerHtml;
 
 module.exports = { myFunction };
