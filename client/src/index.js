@@ -11,18 +11,18 @@ function myFunction() {
   }
 }
 
-const footerHtml = `<ul>\
-              <li>\
-                <a href="#">link</a>\
-              </li>\
-              <li>\
-                <a href="#">link</a>\
-              </li>\
-              <li>\
-                <a href="#">link</a>\
-              </li>\
-            </ul>`;
+// const footerHtml = `<ul>\
+//               <li>\
+//                 <a href="#">link</a>\
+//               </li>\
+//               <li>\
+//                 <a href="#">link</a>\
+//               </li>\
+//               <li>\
+//                 <a href="#">link</a>\
+//               </li>\
+//             </ul>`;
 
-document.getElementsByTagName("footer").innerHTML += footerHtml;
+// document.getElementsByTagName("footer").innerHTML += footerHtml;
 
 module.exports = { myFunction };
