@@ -86,19 +86,14 @@ footer {
   color: #04aa9f;
 }
 
-/* Set a specific color for each brand */
-
-/* Facebook */
-/* .fa-facebook {
-  background: #3b5998;
-  color: white;
-} */
-
-/* Twitter */
-/* .fa-twitter {
-  background: #55acee;
-  color: white;
-} */
+form {
+  background-color: #04aa9f;
+  padding: 20px 30px;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  border: solid 2px #565656;
+  border-radius: 10px;
+}
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
