@@ -57,28 +57,35 @@ li {
   list-style: none;
 }
 
-ul li {
+/* ul li {
   margin-bottom: 5px;
-}
+} */
 
 .skills-container {
-  border: 1px solid black;
+  display: flex;
+  /* flex-direction: row; */
+  margin: 0;
+  /* background-color: red; */
+  /* border: 1px solid black;
   margin: 1rem;
   padding: 0.5rem 0.5rem;
-  text-align: center;
+  text-align: center; */
 }
 .skills {
   display: inline-block;
   border: 1px solid red;
-  padding: 1rem 1rem;
-  vertical-align: middle;
+  width: auto;
+  padding: 0;
+  /* padding: 1rem 1rem;
+  vertical-align: middle; */
 }
 .t-skills {
-  top: -50px;
   display: inline-block;
   border: 1px solid red;
-  padding: 1rem 1rem;
-  vertical-align: middle;
+  width: auto;
+  padding: 0;
+  /* padding: 1rem 1rem;
+  vertical-align: middle; */
 }
 
 footer {
