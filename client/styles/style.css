@@ -42,7 +42,6 @@ body {
   display: none;
 }
 
-.skills,
 .about,
 .contact {
   margin: 5rem;
@@ -55,37 +54,30 @@ h1 {
 
 li {
   list-style: none;
+  text-align: center;
+  /* padding-right: 25px; */
 }
 
-/* ul li {
+ul {
+  padding: 0;
+}
+
+ul li {
   margin-bottom: 5px;
-} */
+}
 
 .skills-container {
   display: flex;
-  /* flex-direction: row; */
-  margin: 0;
-  /* background-color: red; */
-  /* border: 1px solid black;
-  margin: 1rem;
-  padding: 0.5rem 0.5rem;
-  text-align: center; */
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+  gap: 3rem;
+  /* margin-left: 10rem; */
 }
 .skills {
-  display: inline-block;
   border: 1px solid red;
-  width: auto;
-  padding: 0;
-  /* padding: 1rem 1rem;
-  vertical-align: middle; */
-}
-.t-skills {
-  display: inline-block;
-  border: 1px solid red;
-  width: auto;
-  padding: 0;
-  /* padding: 1rem 1rem;
-  vertical-align: middle; */
+  /* width: auto; */
+  padding: 5px;
 }
 
 footer {
