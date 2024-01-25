@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mongodb": "^6.3.0",
+    "mongoose": "^8.1.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.15.3"
+  }
+}
