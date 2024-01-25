@@ -5,7 +5,7 @@ const handleSubmit = async (event) => {
   const formData = new FormData(myForm);
   const urlFormParam = paramCreator(formData);
   console.log(formData);
-  await fetch("/contact", {
+  await fetch("/contact.html", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: formData.toString(),

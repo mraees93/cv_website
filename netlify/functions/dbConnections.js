@@ -8,7 +8,7 @@ const handler = async (event) => {
   try {
     const params = event.queryStringParameters;
     const database = (await clientPromise).db(process.env.MONGODB_DB);
-    const collection = database.collection(process.env.COLLECTION_NAME);
+    const collection = database.collection(process.env.MONGODB_COLLECTION);
 
     collection.insertOne(params);
 
