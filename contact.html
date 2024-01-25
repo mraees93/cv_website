@@ -20,7 +20,7 @@
     <div class="contact">
         <h1>Contact me</h1>
         <div class="container">
-            <form action="action_page.php">
+            <form name="contact" method="POST" data-netlify="true">
               <div class="row">
                 <div class="col-25">
                   <label for="fname">First Name</label>
@@ -48,7 +48,7 @@
               <div class="row">
                 <input type="submit" value="Submit">
               </div>
-            </form>
+            </name=>
           </div>
     </div>
      
@@ -66,5 +66,6 @@
     </footer>
 
     <script src="src/index.js"></script>
+    <script src="src/handleSubmit.js"></script>
 </body>
 </html>
