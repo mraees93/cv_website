@@ -1,7 +1,6 @@
 //this is to run when clicking submit
 const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
-console.log(process.env.MONGODB_URI);
 const clientPromise = mongoClient.connect();
 
 const handler = async (event) => {
