@@ -1,24 +1,25 @@
 const handleSubmit = async (event) => {
   event.preventDefault();
-
+  console.log("start");
   const myForm = event.target;
   const formData = new FormData(myForm);
   const urlFormParam = paramCreator(formData);
-  console.log(process.env.MONGODB_URI);
   await fetch("/contact.html", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: formData.toString(),
   })
     .then(async () => {
-      const res = await fetch(
-        `/.netlify/functions/dbConnections?${urlFormParam}`
-      ).then((response) => {
-        if (response.status == 200) window.alert("Sent");
-        response.json();
-      });
+      console.log("inside then");
+      await fetch(`/.netlify/functions/dbConnections?${urlFormParam}`).then(
+        (response) => {
+          if (response.status == 200) window.alert("Sent");
+          response.json();
+        }
+      );
+      console.log("after then");
     })
-    .catch((error) => alert(error));
+    .catch((error) => window.alert(error, error.message));
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmit);
