@@ -24,5 +24,3 @@ function myFunction() {
 //             </ul>`;
 
 // document.getElementsByTagName("footer").innerHTML += footerHtml;
-
-module.exports = { myFunction };
