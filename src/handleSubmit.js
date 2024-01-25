@@ -4,6 +4,7 @@ const handleSubmit = async (event) => {
   const myForm = event.target;
   const formData = new FormData(myForm);
   const urlFormParam = paramCreator(formData);
+  console.log(formData);
   await fetch("/contact", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -13,6 +14,7 @@ const handleSubmit = async (event) => {
       console.log("inside then");
       await fetch(`/.netlify/functions/dbConnections?${urlFormParam}`).then(
         (response) => {
+          console.log(response);
           if (response.status == 200) window.alert("Sent");
           response.json();
         }
