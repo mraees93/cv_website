@@ -4,18 +4,18 @@ const clientPromise = mongoClient.connect();
 
 const handler = async (event, context) => {
   try {
-    const parameters = event.queryStringParameters;
-    const db = (await clientPromise).db(process.env.MONGODB_DB);
-    const collection = db.collection(process.env.MONGODB_COLLECTION);
+    const params = event.queryStringParameters;
+    const database = (await clientPromise).db(process.env.MONGODB_DB);
+    const collection = database.collection(process.env.MONGODB_COLLECTION);
 
-    collection.insertOne(parameters);
+    collection.insertOne(params);
     context.callbackWaitsForEmptyEventLoop = false;
 
     return {
-      status: 200,
+      statusCode: 200,
     };
   } catch (error) {
-    return { status: 500, body: error.message };
+    return { statusCode: 500, body: error.message };
   }
 };
 
