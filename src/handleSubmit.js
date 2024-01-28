@@ -1,7 +1,6 @@
 const getParameters = (data) => {
   let paramStr = "";
   let count = 0;
-  console.log(data);
   for (const [key, value] of data) {
     if (count < 2) paramStr += `${key}=${value}&`;
     else paramStr += `${key}=${value}`;
@@ -16,6 +15,7 @@ const handleSubmitForm = async (event) => {
   const form = event.target;
   const formData = new FormData(form);
   const urlFormParameters = getParameters(formData);
+  console.log(urlFormParameters);
 
   await fetch("/contact.html", {
     method: "POST",
