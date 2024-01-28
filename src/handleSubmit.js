@@ -18,8 +18,6 @@ const handleSubmitForm = async (event) => {
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: formData.toString(),
   })
-    .catch((error) => window.alert(error.message))
-
     .then(async () => {
       await fetch(
         `/.netlify/functions/dbConnections?${urlFormParameters}`
@@ -27,7 +25,8 @@ const handleSubmitForm = async (event) => {
         if (response.status == 200) window.alert("Sent");
         response.json();
       });
-    });
+    })
+    .catch((error) => window.alert(error.message));
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmitForm);
