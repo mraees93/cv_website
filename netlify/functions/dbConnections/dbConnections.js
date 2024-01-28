@@ -14,7 +14,6 @@ const handler = async (event, context) => {
 
     return {
       statusCode: 200,
-      //body: "results.toString()",
     };
   } catch (error) {
     return { statusCode: 500, body: error.message };
