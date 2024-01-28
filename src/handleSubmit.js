@@ -1,13 +1,14 @@
 const getParameters = (data) => {
-  let paramStr = "";
-  //let count = 0;
-  for (let [i, [key, value]] of Object.entries(Object.entries(data))) {
-    i = +i;
-    if (i < 2) paramStr += `${key}=${value}&`;
-    else paramStr += `${key}=${value}`;
-    //count++;
+  //let paramStr = "";
+  let i = 0;
+  const newParams = [];
+  for (const [key, value] of data) {
+    // if (i < 2) paramStr += `${key}=${value}&`;
+    // else paramStr += `${key}=${value}`;
+    // i++;
+    newParams.push(`${key}=${value}`);
   }
-  return paramStr;
+  return newParams.join("&");
 };
 
 const handleSubmitForm = async (event) => {
