@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
 const clientPromise = mongoClient.connect();
 
-const dbConnectionHandler = async (event, context) => {
+const handler = async (event, context) => {
   try {
     const parameters = event.queryStringParameters;
     const db = (await clientPromise).db(process.env.MONGODB_DB);
@@ -19,4 +19,4 @@ const dbConnectionHandler = async (event, context) => {
   }
 };
 
-module.exports = { dbConnectionHandler };
+module.exports = { handler };
