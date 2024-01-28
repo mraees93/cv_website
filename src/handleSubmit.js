@@ -1,10 +1,11 @@
 const getParameters = (data) => {
   let paramStr = "";
-  let count = 0;
-  for (const [key, value] of data) {
-    if (count < 2) paramStr += `${key}=${value}&`;
+  //let count = 0;
+  for (let [i, [key, value]] of Object.entries(Object.entries(data))) {
+    i = +i;
+    if (i < 2) paramStr += `${key}=${value}&`;
     else paramStr += `${key}=${value}`;
-    count++;
+    //count++;
   }
   return paramStr;
 };
