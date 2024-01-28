@@ -1,14 +1,9 @@
-const getParameters = (data) => {
-  //let paramStr = "";
-  let i = 0;
-  const newParams = [];
-  for (const [key, value] of data) {
-    // if (i < 2) paramStr += `${key}=${value}&`;
-    // else paramStr += `${key}=${value}`;
-    // i++;
-    newParams.push(`${key}=${value}`);
+const getParameters = (formData) => {
+  const newParameters = [];
+  for (const [key, value] of formData) {
+    newParameters.push(`${key}=${value}`);
   }
-  return newParams.join("&");
+  return newParameters.join("&");
 };
 
 const handleSubmitForm = async (event) => {
@@ -17,22 +12,23 @@ const handleSubmitForm = async (event) => {
   const form = event.target;
   const formData = new FormData(form);
   const urlFormParameters = getParameters(formData);
-  console.log(urlFormParameters);
 
   await fetch("/contact.html", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: formData.toString(),
   })
+    .catch((error) => window.alert(error.message))
+
     .then(async () => {
-      await fetch(
-        `/.netlify/functions/dbConnections?${urlFormParameters}`
-      ).then((response) => {
-        if (response.status == 200) window.alert("Sent");
-        response.json();
-      });
-    })
-    .catch((error) => window.alert(error, error.message));
+      await fetch(`/.netlify/functions/dbConnections?${urlFormParameters}`)
+        .catch((error) => window.alert(error.message))
+
+        .then((response) => {
+          if (response.status == 200) window.alert("Sent");
+          response.json();
+        });
+    });
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmitForm);

@@ -1,23 +1,22 @@
-//this is to run when clicking submit
 const { MongoClient } = require("mongodb");
 const mongoClient = new MongoClient(process.env.MONGODB_URI);
 const clientPromise = mongoClient.connect();
 
-const handler = async (event, context) => {
+const dbConnectionHandler = async (event, context) => {
   try {
-    const params = event.queryStringParameters;
-    const database = (await clientPromise).db(process.env.MONGODB_DB);
-    const collection = database.collection(process.env.MONGODB_COLLECTION);
+    const parameters = event.queryStringParameters;
+    const db = (await clientPromise).db(process.env.MONGODB_DB);
+    const collection = db.collection(process.env.MONGODB_COLLECTION);
 
-    collection.insertOne(params);
+    collection.insertOne(parameters);
     context.callbackWaitsForEmptyEventLoop = false;
 
     return {
-      statusCode: 200,
+      status: 200,
     };
   } catch (error) {
-    return { statusCode: 500, body: error.message };
+    return { status: 500, body: error.message };
   }
 };
 
-module.exports = { handler };
+module.exports = { dbConnectionHandler };
