@@ -22,7 +22,7 @@ const handleSubmitForm = async (event) => {
       await fetch(`/.netlify/functions/dbConnections?${urlFormParameters}`)
         .then((response) => {
           if (response.status == 200) window.alert("Sent");
-          response.json();
+          return response.json();
         })
         .catch((error) => window.alert(error.message));
     })
