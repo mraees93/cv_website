@@ -13,7 +13,7 @@ const handleSubmitForm = async (event) => {
   const formData = new FormData(form);
 
   let i = 0;
-  for (const _ of formData.keys()) {
+  for (const _ of formData.values()) {
     console.log("hi", i);
     i++;
   }
