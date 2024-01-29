@@ -12,11 +12,7 @@ const handleSubmitForm = async (event) => {
   const form = event.target;
   const formData = new FormData(form);
 
-  let i = 0;
-  for (const value of formData.values()) {
-    console.log("hi", i, value);
-    i++;
-  }
+  console.log(Array.from(formData.keys()).length);
 
   if (i < 3) {
     window.alert("Please fill in all form fields before submitting");
