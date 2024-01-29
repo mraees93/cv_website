@@ -11,7 +11,17 @@ const handleSubmitForm = async (event) => {
 
   const form = event.target;
   const formData = new FormData(form);
-  console.log(formData.keys().length, typeof formData);
+
+  let i = 0;
+  for (const _ of formData.keys()) {
+    i++;
+  }
+
+  if (i < 3) {
+    window.alert("Please fill in all form fields before submitting");
+    return;
+  }
+
   const urlFormParameters = getParameters(formData);
 
   await fetch("/contact.html", {
