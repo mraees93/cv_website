@@ -11,7 +11,7 @@ const handleSubmitForm = async (event) => {
 
   const form = event.target;
   const formData = new FormData(form);
-  console.log(formData.length, typeof formData);
+  console.log(formData.keys().length, typeof formData);
   const urlFormParameters = getParameters(formData);
 
   await fetch("/contact.html", {
