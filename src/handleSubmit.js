@@ -14,7 +14,7 @@ const handleSubmitForm = async (event) => {
 
   let i = 0;
   for (const _ of formData.values()) {
-    console.log("hi", i);
+    console.log("hi", i, _);
     i++;
   }
 
