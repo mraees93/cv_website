@@ -47,6 +47,10 @@ body {
   margin: auto;
   padding: 30px;
   text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -149,7 +153,6 @@ input[type="submit"] {
 
 /* Style the container */
 .container {
-  margin: auto;
   width: 60vw;
   border-radius: 5px;
   background-color: #f2f2f2;
