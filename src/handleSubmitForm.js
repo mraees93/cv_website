@@ -23,18 +23,16 @@ const handleSubmitForm = async (event) => {
         .then((response) => {
           if (response.status === 200) {
             window.alert("Your form information was successfully submitted");
+            document.getElementsByTagName("form").reset()
           }
           return;
         })
         .catch((error) => {
-          console.log("hi");
           throw error.message;
         });
     })
-    .catch((error) => {
-      console.log("hello");
-      window.alert(error.message)
-    });
+    .catch((error) => window.alert(error.message)
+    );
 };
 
 document.querySelector("form").addEventListener("submit", handleSubmitForm);
