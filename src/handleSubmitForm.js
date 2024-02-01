@@ -23,7 +23,7 @@ const handleSubmitForm = async (event) => {
         .then((response) => {
           if (response.status === 200) {
             window.alert("Your form information was successfully submitted");
-            document.getElementsByTagName("form").reset()
+            document.getElementById("form").reset()
           }
           return;
         })
