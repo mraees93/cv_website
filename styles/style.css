@@ -112,6 +112,7 @@ footer {
 
 /* Style inputs, select elements and textareas */
 input[type="text"],
+input[type="email"],
 select,
 textarea {
   width: 100%;
